@@ -1,5 +1,4 @@
 import React from 'react';
-import { FileText } from 'lucide-react';
 import { Article, FEATURED_ARTICLE, EDITORS_PICKS, DOCTOR_PROFILE } from '../data/blogData';
 
 interface FeaturedSectionProps {
@@ -8,11 +7,11 @@ interface FeaturedSectionProps {
 
 export const FeaturedSection: React.FC<FeaturedSectionProps> = ({ onSelectArticle }) => {
   return (
-    <section className="bg-[#F8F6F0] pb-12 sm:pb-16" id="featured">
+    <section className="bg-[#F4F7FC] pb-12 sm:pb-16" id="featured">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main White Enclosed Feature Card Container */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-8 lg:p-10">
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#E2E8F0] shadow-sm p-6 sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
             {/* Left Area: Featured Article (Text + Gut-Brain Graphic) - 8 cols */}
@@ -21,8 +20,8 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({ onSelectArticl
                 
                 {/* Left Text Content */}
                 <div className="md:col-span-7 space-y-3.5">
-                  <div className="text-[11px] sm:text-xs font-bold tracking-[0.14em] text-[#0D2240] uppercase">
-                    FEATURED ARTICLE
+                  <div className="inline-block px-3 py-1 bg-[#0D2240] text-white text-[10.5px] font-bold tracking-[0.14em] uppercase rounded-full">
+                    FEATURED
                   </div>
 
                   <h2 
@@ -41,13 +40,13 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({ onSelectArticl
                     <img 
                       src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=100&auto=format&fit=crop&q=80" 
                       alt={DOCTOR_PROFILE.name} 
-                      className="w-9 h-9 rounded-full object-cover ring-1 ring-blue-500"
+                      className="w-9 h-9 rounded-full object-cover ring-2 ring-[#1A56DB]/80"
                     />
                     <div>
                       <div className="text-sm font-bold text-[#0D2240] leading-tight">
                         {DOCTOR_PROFILE.name}
                       </div>
-                      <div className="text-xs text-slate-500 mt-0.5">
+                      <div className="text-xs text-slate-500 mt-0.5 font-normal">
                         {FEATURED_ARTICLE.date} &bull; {FEATURED_ARTICLE.readTime}
                       </div>
                     </div>
@@ -58,7 +57,7 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({ onSelectArticl
                 <div className="md:col-span-5 flex justify-center">
                   <div 
                     onClick={() => onSelectArticle(FEATURED_ARTICLE)}
-                    className="w-full h-56 sm:h-64 rounded-xl sm:rounded-2xl bg-[#061122] p-4 flex flex-col items-center justify-center relative overflow-hidden shadow-inner border border-slate-800 cursor-pointer group"
+                    className="w-full h-56 sm:h-64 rounded-xl sm:rounded-2xl bg-[#061122] p-4 flex flex-col items-center justify-center relative overflow-hidden shadow-inner border border-slate-800/80 cursor-pointer group"
                   >
                     
                     {/* Glowing Radial Backdrop */}
@@ -126,7 +125,7 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({ onSelectArticl
             </div>
 
             {/* Right Area: EDITOR'S PICKS - 4 cols */}
-            <div className="lg:col-span-4 lg:pl-4 lg:border-l lg:border-slate-100 flex flex-col justify-between">
+            <div className="lg:col-span-4 lg:pl-6 lg:border-l lg:border-slate-100 flex flex-col justify-between">
               <div>
                 <div className="text-[11px] sm:text-xs font-bold tracking-[0.14em] text-[#0D2240] uppercase mb-4">
                   EDITOR&apos;S PICKS
@@ -137,26 +136,16 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({ onSelectArticl
                     <div 
                       key={pick.id}
                       onClick={() => onSelectArticle(pick)}
-                      className="flex items-center gap-3.5 group cursor-pointer"
+                      className="flex items-start gap-3.5 group cursor-pointer"
                     >
-                      {/* Thumbnail Image / Icon Box */}
-                      <div className="w-16 h-12 sm:w-[70px] sm:h-[50px] rounded-lg overflow-hidden shrink-0 border border-slate-200/80 bg-slate-100 flex items-center justify-center">
-                        {idx === 3 ? (
-                          <div className="w-full h-full bg-blue-50/90 flex items-center justify-center text-[#1A56DB]">
-                            <FileText className="w-5 h-5" />
-                          </div>
-                        ) : (
-                          <img 
-                            src={pick.image || "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200&auto=format&fit=crop&q=80"} 
-                            alt={pick.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
-                          />
-                        )}
+                      {/* Numbered Navy Circle (1, 2, 3, 4) */}
+                      <div className="w-7 h-7 rounded-full bg-[#0D2240] group-hover:bg-[#1A56DB] transition-colors flex items-center justify-center text-white text-xs font-bold shrink-0 mt-0.5">
+                        {idx + 1}
                       </div>
 
                       {/* Content */}
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-xs sm:text-[13px] font-bold text-[#0D2240] group-hover:text-[#1A56DB] transition-colors leading-snug line-clamp-2">
+                        <h3 className="text-xs sm:text-[13.5px] font-bold text-[#0D2240] group-hover:text-[#1A56DB] transition-colors leading-snug line-clamp-2">
                           {pick.title}
                         </h3>
                         <div className="text-[11px] text-slate-500 mt-0.5 font-normal">

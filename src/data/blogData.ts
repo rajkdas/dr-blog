@@ -37,8 +37,8 @@ export const DOCTOR_PROFILE = {
   shortBio: "Evidence-based insights and real clinical experience to help you achieve better digestive health.",
   heroTitle: "The GI Journey, Shared.",
   heroSubtitle: "Personal experiences from GI fellowship, practical lessons from medicine, and approachable insights into digestive health.",
-  heroTagline: "Stories. Science. Compassion.",
-  heroNote: "A doctor's journey to heal minds. and improve lives. 💙",
+  heroTagline: "Stories. Science. Better Digestive Health.",
+  heroNote: "A doctor's journey to learn, share and make a difference. ♡",
   stats: [
     { value: "10+", label: "Years in Clinical Practice", icon: "Users" },
     { value: "500+", label: "Articles & Clinical Insights", icon: "PenTool" },

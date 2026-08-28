@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenSubscribe })
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[#F8F6F0]/95 backdrop-blur-md border-b border-[#E8E4DA]/80 transition-colors duration-200">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#E5EBF2] transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -48,21 +48,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenSubscribe })
                   {DOCTOR_PROFILE.name}
                 </span>
                 
-                {/* GI Stethoscope line-art icon */}
+                {/* GI Stethoscope & Capsule line-art icon */}
                 <svg 
-                  className="w-5 h-5 text-[#1A56DB] shrink-0 inline-block" 
-                  viewBox="0 0 24 24" 
+                  className="w-6 h-6 text-[#0D2240] shrink-0 inline-block" 
+                  viewBox="0 0 28 28" 
                   fill="none" 
                   stroke="currentColor" 
-                  strokeWidth="2" 
+                  strokeWidth="1.8" 
                   strokeLinecap="round" 
                   strokeLinejoin="round"
                 >
-                  <path d="M4.5 3v5a3.5 3.5 0 0 0 7 0V3" />
-                  <path d="M8 11.5v3a4.5 4.5 0 0 0 9 0v-1" />
-                  <circle cx="17" cy="11.5" r="2" />
-                  <path d="M4 3h1.5" />
-                  <path d="M10 3h1.5" />
+                  <path d="M6 3v5a4 4 0 0 0 8 0V3" />
+                  <path d="M10 12v3a5 5 0 0 0 9 0v-2" />
+                  <circle cx="19" cy="13" r="2.5" />
+                  <path d="M5 3h2" />
+                  <path d="M13 3h2" />
+                  <rect x="17" y="18" width="8" height="4" rx="2" strokeWidth="1.5" />
+                  <line x1="21" y1="18" x2="21" y2="22" strokeWidth="1.2" />
                 </svg>
               </div>
 
@@ -249,58 +251,58 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenSubscribe })
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#F8F6F0] border-t border-[#E8E4DA] px-4 pt-3 pb-6 space-y-2 shadow-lg animate-in slide-in-from-top-2">
+        <div className="lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-lg animate-in slide-in-from-top-2">
           <a
             href="#home"
             onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}
-            className="block px-3 py-2 text-base font-bold text-[#0D2240] bg-white/60 rounded-lg"
+            className="block px-3 py-2 text-base font-bold text-[#0D2240] bg-blue-50/60 rounded-lg"
           >
             Home
           </a>
           <a
             href="#about"
             onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
-            className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-white/60 rounded-lg"
+            className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg"
           >
             About Dr. [Your Name]
           </a>
           <a
             href="#featured"
             onClick={(e) => { e.preventDefault(); scrollToSection('featured'); }}
-            className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-white/60 rounded-lg"
+            className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg"
           >
             Featured Articles
           </a>
           <a
             href="#journey"
             onClick={(e) => { e.preventDefault(); scrollToSection('journey'); }}
-            className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-white/60 rounded-lg"
+            className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg"
           >
             From the GI Journey
           </a>
           <a
             href="#insights"
             onClick={(e) => { e.preventDefault(); scrollToSection('insights'); }}
-            className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-white/60 rounded-lg"
+            className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg"
           >
             Digestive Health Insights
           </a>
           <a
             href="#topics"
             onClick={(e) => { e.preventDefault(); scrollToSection('topics'); }}
-            className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-white/60 rounded-lg"
+            className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg"
           >
             Explore Topics
           </a>
           <a
             href="#contact"
             onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
-            className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-white/60 rounded-lg"
+            className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg"
           >
             Contact & Socials
           </a>
 
-          <div className="pt-2 border-t border-[#E8E4DA]">
+          <div className="pt-2 border-t border-slate-100">
             <button
               onClick={() => { setMobileMenuOpen(false); onOpenSubscribe(); }}
               className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-[#0D2240] text-white font-semibold text-sm rounded-lg shadow-sm"
