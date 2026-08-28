@@ -78,7 +78,7 @@ export default function App() {
       />
 
       {/* Main Website Viewport Wrapper */}
-      <div className={`flex-1 ${getViewportContainerClasses()} bg-[#FAFBFD]`}>
+      <div className={`flex-1 ${getViewportContainerClasses()} bg-[#F8F6F0]`}>
         
         {/* Navigation */}
         <Navbar 
